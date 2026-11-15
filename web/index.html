@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ontario Barrier-Free Washroom Checker | Dust 2 Engineering Inc.</title>
+<style>
+:root{color-scheme:dark}
+body{background:#0e1116;color:#e6e9ee;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0;padding:24px;line-height:1.55}
+.wrap{max-width:860px;margin:0 auto}
+h1{font-size:1.55rem;line-height:1.25;margin:.2em 0 .1em}
+h2{font-size:1.15rem;margin-top:1.6em;color:#ffd479}
+.sub{color:#9fb0c3;margin:.2em 0 1.2em}
+.card{background:#161b22;border:1px solid #2b333f;border-radius:12px;padding:18px;margin:14px 0}
+label{display:block;margin:.7em 0 .25em;color:#c8d3e0;font-size:.95rem}
+input,select{width:100%;box-sizing:border-box;background:#0e1116;color:#e6e9ee;border:1px solid #39424f;border-radius:8px;padding:9px;font-size:1rem}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.row{grid-template-columns:1fr}}
+button{background:#f0a832;color:#14100a;border:0;border-radius:8px;padding:11px 18px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:14px}
+pre{background:#0a0d11;border:1px solid #2b333f;border-radius:10px;padding:14px;white-space:pre-wrap;word-break:break-word;font-size:.92rem}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th,td{border:1px solid #2b333f;padding:6px 8px;text-align:left}
+th{background:#1b212b}
+.small{color:#9fb0c3;font-size:.88rem}
+a{color:#7cc4ff}
+.pass{color:#7ee2a0}.fail{color:#ff9c9c}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Ontario Barrier-Free Washroom Checker</h1>
+<p class="sub">Dimension-by-dimension compliance check for barrier-free and universal washrooms — OBC 2024, 3.8.3.8 to 3.8.3.12.</p>
+<div class="card">
+<p class="small">Enter the measured or drawn dimensions you have; blank fields are skipped. All values in millimetres, 2024 OBC.</p>
+<div class="row"><div><label>Clear turning space inside the barrier-free stall (mm diameter) — limit ≥ 1500 (3.8.3.8.(1)(a))</label><input id="turning_stall" type="number" placeholder="measured mm"></div></div><div class="row"><div><label>Stall door clear opening (mm) — limit ≥ 850 (3.8.3.8.(1)(c)(ii))</label><input id="door_clear" type="number" placeholder="measured mm"></div></div><div class="row"><div><label>Water closet centreline from side wall (mm) — limit 460–480 (3.8.3.8.(2)(a)(i))</label><input id="wc_centreline" type="number" placeholder="measured mm"></div></div><div class="row"><div><label>Transfer space width beside the water closet (mm) — limit ≥ 900 (3.8.3.8.(2)(a)(ii))</label><input id="transfer_w" type="number" placeholder="measured mm"></div></div><div class="row"><div><label>Transfer space depth (mm) — limit ≥ 1500 (3.8.3.8.(2)(a)(ii))</label><input id="transfer_d" type="number" placeholder="measured mm"></div></div><div class="row"><div><label>Water closet seat height above floor (mm) — limit 430–485 (3.8.3.9)</label><input id="seat_height" type="number" placeholder="measured mm"></div></div><div class="row"><div><label>Side-wall L grab bar, horizontal component height (mm) — limit = 750 (3.8.3.8.(5))</label><input id="side_bar_h" type="number" placeholder="measured mm"></div></div><div class="row"><div><label>Rear-wall grab bar length (mm) — limit ≥ 600 (3.8.3.8.(3)(c))</label><input id="rear_bar_len" type="number" placeholder="measured mm"></div></div><div class="row"><div><label>Rear-wall grab bar height (mm) — limit 840–920 (3.8.3.8.(4)(b)/(6))</label><input id="rear_bar_h" type="number" placeholder="measured mm"></div></div><div class="row"><div><label>Lavatory rim height above floor (mm) — limit ≤ 865 (3.8.3.11)</label><input id="lav_rim" type="number" placeholder="measured mm"></div></div><div class="row"><div><label>Lavatory knee clearance height at front edge (mm) — limit ≥ 735 (3.8.3.11)</label><input id="knee_front" type="number" placeholder="measured mm"></div></div><div class="row"><div><label>Lavatory knee clearance height 200 mm back (mm) — limit ≥ 685 (3.8.3.11)</label><input id="knee_200" type="number" placeholder="measured mm"></div></div><div class="row"><div><label>Universal washroom turning space (mm diameter) — limit ≥ 1700 (3.8.3.12)</label><input id="uw_turning" type="number" placeholder="measured mm"></div></div><div class="row"><div><label>Universal washroom smallest wall-to-wall dimension (mm) — limit ≥ 1700 (3.8.3.12)</label><input id="uw_min_dim" type="number" placeholder="measured mm"></div></div>
+<button onclick="calc()">Check dimensions</button>
+<pre id="out">Enter at least one dimension.</pre>
+</div>
+<div class="card"><h2>What changed in the 2024 edition</h2>
+<p>The 2024 Code rewrote Subsection 3.8.3: there is no longer a fixed 1,500 × 1,500 mm
+stall size (turning-space and clearance rules replaced it), the stall door clear opening
+rose from 810 to <b>850 mm</b>, the seat height range moved from 400–460 to
+<b>430–485 mm</b>, and the universal washroom turning space grew from 1,500 to
+<b>1,700 mm</b> diameter. A washroom that complied in 2012 can fail in 2024.</p></div>
+<p class="small">Free tool by <b>Dust 2 Engineering Inc.</b>, Mississauga, Ontario — building permit
+drawings for restaurants and small commercial projects across the GTA, stamped by an Ontario P.Eng.
+Flat rate $3,500–$5,000. Questions or a project to discuss: open an issue in this repository.</p>
+</div>
+<script>
+
+const ITEMS = [{"key": "turning_stall", "label": "Clear turning space inside the barrier-free stall (mm diameter)", "kind": "min", "limit": 1500, "article": "3.8.3.8.(1)(a)"}, {"key": "door_clear", "label": "Stall door clear opening (mm)", "kind": "min", "limit": 850, "article": "3.8.3.8.(1)(c)(ii)"}, {"key": "wc_centreline", "label": "Water closet centreline from side wall (mm)", "kind": "range", "limit": [460, 480], "article": "3.8.3.8.(2)(a)(i)"}, {"key": "transfer_w", "label": "Transfer space width beside the water closet (mm)", "kind": "min", "limit": 900, "article": "3.8.3.8.(2)(a)(ii)"}, {"key": "transfer_d", "label": "Transfer space depth (mm)", "kind": "min", "limit": 1500, "article": "3.8.3.8.(2)(a)(ii)"}, {"key": "seat_height", "label": "Water closet seat height above floor (mm)", "kind": "range", "limit": [430, 485], "article": "3.8.3.9"}, {"key": "side_bar_h", "label": "Side-wall L grab bar, horizontal component height (mm)", "kind": "exact", "limit": 750, "article": "3.8.3.8.(5)"}, {"key": "rear_bar_len", "label": "Rear-wall grab bar length (mm)", "kind": "min", "limit": 600, "article": "3.8.3.8.(3)(c)"}, {"key": "rear_bar_h", "label": "Rear-wall grab bar height (mm)", "kind": "range", "limit": [840, 920], "article": "3.8.3.8.(4)(b)/(6)"}, {"key": "lav_rim", "label": "Lavatory rim height above floor (mm)", "kind": "max", "limit": 865, "article": "3.8.3.11"}, {"key": "knee_front", "label": "Lavatory knee clearance height at front edge (mm)", "kind": "min", "limit": 735, "article": "3.8.3.11"}, {"key": "knee_200", "label": "Lavatory knee clearance height 200 mm back (mm)", "kind": "min", "limit": 685, "article": "3.8.3.11"}, {"key": "uw_turning", "label": "Universal washroom turning space (mm diameter)", "kind": "min", "limit": 1700, "article": "3.8.3.12"}, {"key": "uw_min_dim", "label": "Universal washroom smallest wall-to-wall dimension (mm)", "kind": "min", "limit": 1700, "article": "3.8.3.12"}];
+function ok(it, v){ const lim=it.limit;
+  if(it.kind==='min') return v>=lim; if(it.kind==='max') return v<=lim;
+  if(it.kind==='exact') return v===lim; return v>=lim[0] && v<=lim[1]; }
+function limtxt(it){ const lim=it.limit;
+  if(it.kind==='min') return '>= '+lim; if(it.kind==='max') return '<= '+lim;
+  if(it.kind==='exact') return '= '+lim; return lim[0]+'-'+lim[1]; }
+function calc(){
+  let s='', bad=0, n=0;
+  for(const it of ITEMS){
+    const el=document.getElementById(it.key); if(el.value==='') continue;
+    const v=+el.value, good=ok(it,v); n++; if(!good) bad++;
+    s+=(good?'PASS  ':'FAIL  ')+it.label+': '+v+' mm (limit '+limtxt(it)+', '+it.article+')\n';
+  }
+  if(!n) s='Enter at least one dimension.';
+  else s+= bad===0 ? 'All checked dimensions comply.' : bad+' item(s) do not comply.';
+  document.getElementById('out').textContent=s;
+}
+
+</script>
+</body>
+</html>
