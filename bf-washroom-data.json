@@ -1,0 +1,127 @@
+{
+  "items": [
+    {
+      "key": "turning_stall",
+      "label": "Clear turning space inside the barrier-free stall (mm diameter)",
+      "kind": "min",
+      "limit": 1500,
+      "article": "3.8.3.8.(1)(a)"
+    },
+    {
+      "key": "door_clear",
+      "label": "Stall door clear opening (mm)",
+      "kind": "min",
+      "limit": 850,
+      "article": "3.8.3.8.(1)(c)(ii)"
+    },
+    {
+      "key": "wc_centreline",
+      "label": "Water closet centreline from side wall (mm)",
+      "kind": "range",
+      "limit": [
+        460,
+        480
+      ],
+      "article": "3.8.3.8.(2)(a)(i)"
+    },
+    {
+      "key": "transfer_w",
+      "label": "Transfer space width beside the water closet (mm)",
+      "kind": "min",
+      "limit": 900,
+      "article": "3.8.3.8.(2)(a)(ii)"
+    },
+    {
+      "key": "transfer_d",
+      "label": "Transfer space depth (mm)",
+      "kind": "min",
+      "limit": 1500,
+      "article": "3.8.3.8.(2)(a)(ii)"
+    },
+    {
+      "key": "seat_height",
+      "label": "Water closet seat height above floor (mm)",
+      "kind": "range",
+      "limit": [
+        430,
+        485
+      ],
+      "article": "3.8.3.9"
+    },
+    {
+      "key": "side_bar_h",
+      "label": "Side-wall L grab bar, horizontal component height (mm)",
+      "kind": "exact",
+      "limit": 750,
+      "article": "3.8.3.8.(5)"
+    },
+    {
+      "key": "rear_bar_len",
+      "label": "Rear-wall grab bar length (mm)",
+      "kind": "min",
+      "limit": 600,
+      "article": "3.8.3.8.(3)(c)"
+    },
+    {
+      "key": "rear_bar_h",
+      "label": "Rear-wall grab bar height (mm)",
+      "kind": "range",
+      "limit": [
+        840,
+        920
+      ],
+      "article": "3.8.3.8.(4)(b)/(6)"
+    },
+    {
+      "key": "lav_rim",
+      "label": "Lavatory rim height above floor (mm)",
+      "kind": "max",
+      "limit": 865,
+      "article": "3.8.3.11"
+    },
+    {
+      "key": "knee_front",
+      "label": "Lavatory knee clearance height at front edge (mm)",
+      "kind": "min",
+      "limit": 735,
+      "article": "3.8.3.11"
+    },
+    {
+      "key": "knee_200",
+      "label": "Lavatory knee clearance height 200 mm back (mm)",
+      "kind": "min",
+      "limit": 685,
+      "article": "3.8.3.11"
+    },
+    {
+      "key": "uw_turning",
+      "label": "Universal washroom turning space (mm diameter)",
+      "kind": "min",
+      "limit": 1700,
+      "article": "3.8.3.12"
+    },
+    {
+      "key": "uw_min_dim",
+      "label": "Universal washroom smallest wall-to-wall dimension (mm)",
+      "kind": "min",
+      "limit": 1700,
+      "article": "3.8.3.12"
+    }
+  ],
+  "fixed_requirements": [
+    "Side-wall grab bar: continuous L-shape, 750 mm horizontal + 750 mm vertical components; vertical component 150 mm in front of the water closet (3.8.3.8.(3)(a)/(5)).",
+    "All grab bars: resist 1.3 kN, diameter 30-40 mm, wall clearance 38-50 mm, slip-resistant (3.8.3.8.(7)).",
+    "Fold-down grab bar on the transfer side: at least 750 mm long, 390-410 mm from the water closet centreline, pull-down force not more than 22.2 N (3.8.3.8.(8)).",
+    "Stall door: self-closing, D-pulls both sides at 800-1,000 mm, latch releasable from outside in an emergency (3.8.3.8.(1)(c)).",
+    "Universal washroom door: power door operator required; emergency call system with audible and visual devices inside and outside (3.8.3.12).",
+    "Ambulatory stall where required: 890-940 mm wide, at least 1,500 mm deep, door clear opening at least 810 mm (3.8.3.8.(10)).",
+    "Accessible urinal: rim not more than 430 mm above floor, clear floor space at least 800 mm wide (3.8.3.10)."
+  ],
+  "edition_changes_2024": [
+    "No fixed 1,500 x 1,500 mm stall size in 2024 \u2014 replaced by turning-space and clearance rules.",
+    "Stall door clear opening is now 850 mm (was 810 mm).",
+    "Seat height is now 430-485 mm (was 400-460 mm).",
+    "Universal washroom turning space is now 1,700 mm diameter (was 1,500 mm)."
+  ],
+  "source": "OBC 2024 Articles 3.8.3.8-3.8.3.12, verified at ontario.ca 2024 Building Code Compendium Part 3, 2026-11-15"
+}
